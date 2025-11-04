@@ -47,30 +47,38 @@ header {
 }
 
 /*************************************************
-    HomePage.jsx
+    MovieCard.jsx
  *************************************************/
+.movie-column {
+  cursor: pointer;
+}
+
 .movies-container {
   height: 400px;
-  background-color: #ebe3ee;
   padding: 40px;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.movie-card {
+.poster {
   height: 300px;
   background-color: cadetblue;
   width: 260px;
   border-radius: 22px;
   display: flex;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    border-radius: inherit;
+  }
 }
 
 .movie-info {
   height: 68px;
-  background-color: violet;
   display: flex;
-  align-self: end;
+  flex-direction: column;
   width: 100%;
   padding: 20px;
   border-bottom-left-radius: 22px;
@@ -79,42 +87,53 @@ header {
 /*************************************************
     MoviePage.jsx
  *************************************************/
-.main-container-card-movie {
-  display: flex;
-  justify-content: center;
+.main-container {
+  width: 40%;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #ebe3ee;
+}
+
+.movie-info-mp {
   align-items: center;
-  margin: 60px;
-  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
 }
 
-.card {
-  position: relative;
+.box-img {
+  height: 300px;
+  width: 260px;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+.box-txt {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/*************************************************
+    ReviewCard.jsx
+ *************************************************/
+
+.review-card {
+  height: 60px;
   width: 300px;
-  height: 420px;
+  border: 1px solid #ebe3ee;
+  border-radius: 18px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
 }
 
-.top-box {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 220px;
-  height: 160px;
-  background-color: #c7f5d9;
-  border: 3px solid orange;
-  border-radius: 20px;
-  z-index: 2;
-}
-
-.bottom-box {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 280px;
-  height: 360px;
-  background-color: #ffd4d4;
-  border: 3px solid red;
-  border-radius: 20px;
-  z-index: 1;
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
 }

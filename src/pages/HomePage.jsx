@@ -4,6 +4,9 @@ import axios from "axios";
 // import state e effetc
 import { useState, useEffect } from "react";
 
+//import MovieCard
+import MovieCard from "../components/MovieCard";
+
 //componente HomePage
 const HomePage = () => {
   // stato: lista dei film
@@ -25,22 +28,12 @@ const HomePage = () => {
   // esegue fetchMovies una sola volta al montaggio della pagina
   useEffect(fetchMovies, []);
 
-  //verifica
-  console.log("Movies:", movies);
-
   return (
     <div className="movies-container">
-      {/* MOVIE CARD _____________________ */}
-      <div className="movie-card">
-        <div className="movie-info"></div>
-      </div>
-      {/* ________________________________ */}
-      <div className="movie-card">
-        <div className="movie-info"></div>
-      </div>
-      <div className="movie-card">
-        <div className="movie-info"></div>
-      </div>
+      {/* Mappa dell’elenco */}
+      {movies.map((movie) => (
+        <MovieCard key={movie.id} movie={movie} />
+      ))}
     </div>
   );
 };
