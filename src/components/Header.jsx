@@ -1,15 +1,16 @@
 // import di router-dom per link
 import { Link } from "react-router-dom";
+import HomePage from "../pages/HomePage";
+import MovieCard from "./MovieCard";
 
 // creazione componente Header
 const Header = () => {
   return (
     <header>
       <nav className="nav-container">
-        <ul>
-          <li>MOVIES EXPRESS</li>
-          <li>{/* <Link to="/">Dettaglio Film</Link> */}</li>
-        </ul>
+        <Link to={MovieCard}>
+          <h4>MOVIES EXPRESS</h4>
+        </Link>
       </nav>
     </header>
   );

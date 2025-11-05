@@ -5,7 +5,7 @@ const MovieCard = ({ movie }) => {
   const { id, title, image, genre } = movie;
 
   return (
-    <div className="movie-column">
+    <Link to={`/movies/${id}`} className="movie-column">
       <div className="poster">
         <img src={image} alt={title} />
       </div>
@@ -13,7 +13,7 @@ const MovieCard = ({ movie }) => {
         <h4 className="movie-title">{title}</h4>
         <p className="movie-genre">{genre}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

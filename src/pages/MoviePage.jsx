@@ -52,12 +52,13 @@ const MoviePage = () => {
         <img className="box-img" src={movie?.image} alt={movie?.title} />
         <div className="box-txt">
           <h3>{movie?.title}</h3>
-          <p>
+          <p className="dir-year-genre">
             {movie?.director} • {movie?.release_year} • {movie?.genre}
           </p>
-          <p>{movie?.abstract}</p>
+          <p className="abstract">{movie?.abstract}</p>
         </div>
       </div>
+
       {/* REVIEWS _____________________________________________________________ */}
       <section className="reviews-container">
         <h5>Reviews</h5>

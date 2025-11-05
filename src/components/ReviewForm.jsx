@@ -59,7 +59,7 @@ const ReviewForm = ({ idProp, reloadReviews }) => {
             id="name"
             name="name"
             type="text"
-            placeholder="Il tuo nome"
+            placeholder="Write your name..."
             value={formData.name}
             onChange={setFieldValue}
             required
@@ -81,7 +81,7 @@ const ReviewForm = ({ idProp, reloadReviews }) => {
 
         {/* Voto */}
         <div className="form-section">
-          <label htmlFor="vote">Vote (1–5)</label>
+          <label htmlFor="vote">Vote (1–5⭐⭐⭐⭐⭐)</label>
           <input
             id="vote"
             name="vote"
@@ -89,7 +89,7 @@ const ReviewForm = ({ idProp, reloadReviews }) => {
             min="1"
             max="5"
             step="1"
-            placeholder="5"
+            placeholder="Enter vote... "
             value={formData.vote}
             onChange={setFieldValue}
             required

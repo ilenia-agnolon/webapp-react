@@ -11,7 +11,6 @@ const ReviewCard = ({ reviewProp }) => {
         </p>
         <p className="review-text">“{text}”</p>
       </div>
-      <hr />
     </div>
   );
 };
