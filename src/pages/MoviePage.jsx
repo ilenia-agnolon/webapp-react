@@ -9,6 +9,8 @@ import { useState, useEffect } from "react";
 
 // import comp singola review
 import ReviewCard from "../components/ReviewCard";
+// import comp form review
+import ReviewForm from "../components/ReviewForm";
 
 const MoviePage = () => {
   // creo istanza di Navigate
@@ -45,7 +47,7 @@ const MoviePage = () => {
 
   return (
     <div className="main-container">
-      {/* movie info */}
+      {/* MOVIE INFO _________________________________________________________ */}
       <div className="movie-info-mp">
         <img className="box-img" src={movie?.image} alt={movie?.title} />
         <div className="box-txt">
@@ -56,7 +58,7 @@ const MoviePage = () => {
           <p>{movie?.abstract}</p>
         </div>
       </div>
-      {/* reviews */}
+      {/* REVIEWS _____________________________________________________________ */}
       <section className="reviews-container">
         <h5>Reviews</h5>
         {movie?.reviews?.length ? (
@@ -65,6 +67,9 @@ const MoviePage = () => {
           <p className="muted">Nessuna recensione disponibile.</p>
         )}
       </section>
+
+      {/* FORM per aggiungere nuova recensione_________________________________ */}
+      <ReviewForm idProp={id} reloadReviews={fetchMovie} />
     </div>
   );
 };
