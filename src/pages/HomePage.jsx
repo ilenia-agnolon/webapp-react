@@ -7,8 +7,14 @@ import { useState, useEffect } from "react";
 //import MovieCard
 import MovieCard from "../components/MovieCard";
 
+// import hook per contesto
+import { useGlobal } from "../contexts/GlobalContext";
+
 //componente HomePage
 const HomePage = () => {
+  //estrapolo da context var di stato
+  const { setIsLoading } = useGlobal();
+
   // stato: lista dei film
   const [movies, setMovies] = useState([]);
 
@@ -22,6 +28,9 @@ const HomePage = () => {
       })
       .catch((error) => {
         console.log("Errore nel caricamento film:", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 

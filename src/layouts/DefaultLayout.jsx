@@ -3,15 +3,27 @@ import { Outlet } from "react-router-dom";
 
 // importo comp Header
 import Header from "../components/Header";
+// import comp loader
+import Loader from "../components/Loader";
+
+// import hook per contesto
+import { useGlobal } from "../contexts/GlobalContext";
 
 // creazione componente Layout DefaultLayout
-export default function DefaultLayout() {
+const DefaultLayout = () => {
+  // etrapolo da context var di stato
+  const { isLoading } = useGlobal();
+
   return (
     <>
       <Header />
-      <main>
+      <main className="container">
         <Outlet />
       </main>
+      {/* se var è true renderizza comp */}
+      {isLoading && <Loader />}
     </>
   );
-}
+};
+
+export default DefaultLayout;

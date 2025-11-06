@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header>
       <nav className="nav-container">
-        <Link to={MovieCard}>
+        <Link to="/">
           <h4>MOVIES EXPRESS</h4>
         </Link>
       </nav>

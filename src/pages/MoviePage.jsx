@@ -12,7 +12,13 @@ import ReviewCard from "../components/ReviewCard";
 // import comp form review
 import ReviewForm from "../components/ReviewForm";
 
+// import hook per contesto
+import { useGlobal } from "../contexts/GlobalContext";
+
 const MoviePage = () => {
+  //estrapolo da context var di stato
+  const { setIsLoading } = useGlobal();
+
   // creo istanza di Navigate
   const redirect = useNavigate();
 
@@ -32,6 +38,9 @@ const MoviePage = () => {
       .catch((error) => {
         console.log(error);
         if (error.status === 404) redirect("/404");
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
